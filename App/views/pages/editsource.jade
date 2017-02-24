@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+  .container.marginbot
+    .row
+      form.form-horizontal(method="post", action="/admin/source/new", enctype="multipart/form-data")
+        input(type='hidden',name='source[_id]',value='#{source._id}')
+        .form-group
+          label.col-sm-2.control-label(for="inputTitle") 视频标题
+          .col-sm-10
+            input#inputTitle.form-control(type="text", name='source[title]', value='#{source.title}')
+        .form-group
+          label.col-sm-2.control-label(for="inputTeacher") 视频老师
+          .col-sm-10
+            input#inputTeacher.form-control(type="text", name='source[teacher]', value='#{source.teacher}')
+        .form-group
+          label.col-sm-2.control-label(for="inputGrade") 年级
+          .col-sm-10
+            input#inputGrade.form-control(type="text", name='source[grade]', value='#{source.grade}')
+        .form-group
+          label.col-sm-2.control-label(for="inputPicture") 封面图片
+          .col-sm-10
+            input#inputPicture.form-control(type="file", name='avatar', value='#{source.picture}')
+        .form-group
+          label.col-sm-2.control-label(for="inputPoster") 选择需要上传的视频
+          .col-sm-10
+            input#inputPoster.form-control(type="file", name='gallery', value='#{source.poster}')
+        .form-group
+          label.col-sm-2.control-label(for="inputSummary") 简介
+          .col-sm-10
+            input#inputSummary.form-control(type="text", name='source[summary]', value='#{source.summary}')
+        .form-group
+          .col-sm-offset-2.col-sm-10
+          button.btn.btn-default(type="submit") 录入

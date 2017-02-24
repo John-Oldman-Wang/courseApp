@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+	.container.marginbot
+		.row
+			each item in sources
+				.col-md-3
+					.thumbnail
+						a(href='movie/#{item._id}')
+							img(src='#{item.picture}', alt="#{item.title}")
+						.caption
+							h3 #{item.title}
+							p: a.btn.btn-primary(href='/watch?id=#{item._id}',role='button') 立即观看
