@@ -1,5 +1,6 @@
 var Source=require('../models/sources.js')
 var _=require('underscore')
+var fs=require("fs")
 exports.watch=function(req,res){
 	var id=req.query.id
 	Source.findById(id,function(err,source){
@@ -107,7 +108,7 @@ exports.list=function(req,res){
 			console.log(err)
 		}
 		res.render('sourcelist',{
-			title: '电影列表',
+			title: '课程列表',
 			sources: sources,
 			user:req.session.user
 		})
@@ -118,13 +119,17 @@ exports.list=function(req,res){
 exports.del=function(req,res){
 	var id=req.query.id
 	if(id){
-		Source.remove({_id:id},function(err,movie){
-			if(err){
-				console.log(err)
-			}
-			else{
-				res.json({success:1})
-			}
+		Source.findById(id,function(err,source){
+			fs.unlinkSync(__dirname+"/../../public"+source.picture)
+			fs.unlinkSync(__dirname+"/../../public"+source.filepath)
+			Source.remove({_id:id},function(err,result){
+				if(err){
+					console.log(err)
+				}
+				else{
+					res.json({success:1})
+				}
+			})
 		})
 	}
 }

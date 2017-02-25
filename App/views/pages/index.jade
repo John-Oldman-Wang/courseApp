@@ -2,12 +2,13 @@ extends ../layout
 
 block content
 	.container.marginbot
+		link(href='/css/index.css', rel='stylesheet')
 		.row
 			each item in sources
 				.col-md-3
-					.thumbnail
-						a(href='movie/#{item._id}')
+					.thumbnail.courseItem
+						a(href='watch?id=#{item._id}')
 							img(src='#{item.picture}', alt="#{item.title}")
-						.caption
+						.coursebox
 							h3 #{item.title}
 							p: a.btn.btn-primary(href='/watch?id=#{item._id}',role='button') 立即观看

@@ -24,7 +24,7 @@ exports.new=function(req,res){
 					console.log(err)
 				}
 				//用户信息保存到数据库里面
-				res.redirect('/admin/movielist')
+				res.redirect('/')
 			})
 		}
 	})
@@ -64,7 +64,10 @@ exports.verification=function(req,res){
 				delete user.password
 				req.session.user = user //写入会话
 				console.log('password is match')
-				res.redirect('/admin/userlist')
+				if(req.session.user.name=="admin")
+					res.redirect('/admin/source/new')
+				else
+					res.redirect('/')
 			}
 			else{
 				//密码错误
