@@ -106,7 +106,7 @@ exports.list=function(req,res){
 		if(err){
 			console.log(err)
 		}
-		res.render('movielist',{
+		res.render('sourcelist',{
 			title: '电影列表',
 			sources: sources,
 			user:req.session.user
