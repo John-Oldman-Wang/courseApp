@@ -128,7 +128,7 @@ window.addEventListener('load',function(){
 				vid.pause()
 			},500)
 		}
-	},false
+	},false)
 	// fullscreen btn event
 	var Ds=['m 10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z','m 20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z','m 24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z','M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z','m 14,14 -4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z','m 22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z','m 20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z','m 10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z'];
 	fullscreen.addEventListener('click',function(event){
