@@ -12,7 +12,7 @@ var app=express()
 var port=process.env.PORT || 3000
 
 mongoose.connect(dburl)
-
+app.set("env","production")
 app.disable("x-powered-by")
 app.set("views","./App/views/pages")
 app.set("view engine","jade")
