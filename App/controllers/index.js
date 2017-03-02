@@ -5,10 +5,6 @@ module.exports=function(req,res){
 		if(err){
 			console.log(err)
 		}
-		res.render('index',{
-			title: '栀茗教学',
-			sources: sources,
-			user:req.session.user
-		})
+		res.redirect("/index.html")
 	})
 }
